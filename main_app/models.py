@@ -2,9 +2,17 @@ from django.db import models
 # add this import
 from datetime import date
 
+
 # A tuple of 2-tuples
 MEALS = (("B", "Breakfast"), ("L", "Lunch"), ("D", "Dinner"))
 # new code above
+class Toy(models.Model):
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
 
 # Create your models here.
 class Cat(models.Model):
@@ -12,6 +20,7 @@ class Cat(models.Model):
     breed = models.CharField(max_length=100)
     description = models.TextField(max_length=250)
     age = models.IntegerField()
+    toys = models.ManyToManyField(Toy)
     # new code below
     def __str__(self):
         return self.name
@@ -40,14 +49,3 @@ class Feeding(models.Model):
       # change the default sort
     class Meta:
       ordering = ['-date']
-
-class Toy(models.Model):
-    name = models.CharField(
-       max_length = 50,
-       default="toy"
-       )
-    color = models.CharField(
-        max_length = 20
-    )
-    def __str__(self):
-      return self.name

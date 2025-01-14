@@ -9,6 +9,8 @@ from .views import (
     FeedingDetail,
     ToyList,
     ToyDetail,
+    AddToyToCat,
+    RemoveToyFromCat,
 )  # additional imports
 
 urlpatterns = [
@@ -28,4 +30,14 @@ urlpatterns = [
     ),
     path("toys/", ToyList.as_view(), name="toy-list"),
     path("toys/<int:id>/", ToyDetail.as_view(), name="toy-detail"),
+    path(
+        "cats/<int:cat_id>/add_toy/<int:toy_id>/",
+        AddToyToCat.as_view(),
+        name="add-toy-to-cat",
+    ),
+    path(
+        "cats/<int:cat_id>/remove_toy/<int:toy_id>/",
+        RemoveToyFromCat.as_view(),
+        name="remove-toy-from-cat",
+    ),
 ]
