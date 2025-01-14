@@ -40,3 +40,14 @@ class Feeding(models.Model):
       # change the default sort
     class Meta:
       ordering = ['-date']
+
+class Toy(models.Model):
+    name = models.CharField(
+       max_length = 50,
+       default="toy"
+       )
+    color = models.CharField(
+        max_length = 20
+    )
+    def __str__(self):
+      return self.name
