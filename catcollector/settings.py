@@ -58,7 +58,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
 
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+# ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 # allows requests from localhost - will need to update again for deployment
 
 # CORS settings
