@@ -11,6 +11,9 @@ from .views import (
     ToyDetail,
     AddToyToCat,
     RemoveToyFromCat,
+    CreateUserView,
+    LoginView, 
+    VerifyUserView
 )  # additional imports
 
 urlpatterns = [
@@ -40,4 +43,7 @@ urlpatterns = [
         RemoveToyFromCat.as_view(),
         name="remove-toy-from-cat",
     ),
+    path("users/register/", CreateUserView.as_view(), name="register"),
+    path("users/login/", LoginView.as_view(), name="login"),
+    path("users/token/refresh/", VerifyUserView.as_view(), name="token_refresh"),
 ]
