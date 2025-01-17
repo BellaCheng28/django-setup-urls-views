@@ -65,11 +65,6 @@ ALLOWED_HOSTS = [
 # ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 # allows requests from localhost - will need to update again for deployment
 
-# CORS settings
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
-    "https://catcollectorfrontend.netlify.app",
-]
 
 # Application definition
 
@@ -95,8 +90,18 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+   
 ]
+
+django_heroku.settings(locals())
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
+    "https://catcollectorfrontend.netlify.app",
+]
+
+# CORS_ALLOW_CREDENTIALS = True
 
 # Configuration for django-rest-framework-simplejwt
 REST_FRAMEWORK = {
@@ -206,5 +211,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-django_heroku.settings(locals())
