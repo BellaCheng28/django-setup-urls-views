@@ -64,6 +64,7 @@ ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com", ".netlify.app"]
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
+    "https://catcollectorfrontend.netlify.app/",
 ]
 
 # Application definition
@@ -81,9 +82,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
