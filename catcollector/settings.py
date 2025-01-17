@@ -55,7 +55,11 @@ SECRET_KEY = "django-insecure-6*6)_+=(+oi@+o+(t0+k%6o=f40&b2ha^+nqyn1g9tu+kfzmqd
 DEBUG = True
 # catcollector/settings.py
 
-ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    ".herokuapp.com",
+    "catcollectorfrontend.netlify.app",
+]
 
 
 # ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
@@ -64,6 +68,7 @@ ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
+    "https://catcollectorfrontend.netlify.app",
 ]
 
 # Application definition
@@ -83,6 +88,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
