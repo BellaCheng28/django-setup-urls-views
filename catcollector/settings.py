@@ -55,7 +55,7 @@ SECRET_KEY = "django-insecure-6*6)_+=(+oi@+o+(t0+k%6o=f40&b2ha^+nqyn1g9tu+kfzmqd
 DEBUG = True
 # catcollector/settings.py
 
-ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com", ".netlify.app"]
 
 
 # ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
